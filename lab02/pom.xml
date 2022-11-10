@@ -28,6 +28,11 @@
       <groupId>org.junit.jupiter</groupId>
       <version>5.9.1</version>
     </dependency>
+    <dependency>
+      <artifactId>lab01</artifactId>
+      <groupId>de.bht</groupId>
+      <version>1.0.0</version>
+    </dependency>
   </dependencies>
 
 </project>

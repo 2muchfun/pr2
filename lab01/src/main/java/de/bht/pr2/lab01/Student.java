@@ -8,6 +8,7 @@ public class Student {
 
   // Matrikelnummer
   public int registrationNumber = 0;
+
   private List<String> courses = Arrays.asList("Medieninformatik",
           "Technische Informatik",
           "Druck- und Medientechnik",
@@ -43,6 +44,7 @@ public class Student {
     if (Integer.parseInt(student_string_list.get(3)) !=this.TUITION_FEE )
     {
       throw new NotPaidTuitionFeeException("Zu wenig bezahlt");
+
     }
     boolean foo = this.courses.contains(student_string_list.get(2));
     if (this.courses.contains(student_string_list.get(2)))
@@ -54,6 +56,7 @@ public class Student {
     else
     {
       throw new WrongCourseOfStudiesException("Falscher Studiengang");
+
     }
 
     System.out.println(temp);

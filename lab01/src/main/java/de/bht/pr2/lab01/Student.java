@@ -4,16 +4,16 @@ public class Student {
 
   //-------------------------------------------
   // Attribute
-  private String name = "";
+  public String name = "";
 
   // Matrikelnummer
-  private int registrationNumber = 0;
+  public int registrationNumber = 0;
   private List<String> courses = Arrays.asList("Medieninformatik",
           "Technische Informatik",
           "Druck- und Medientechnik",
           "Screen Based Media");
   // Medieninformatik, Technische Informatik, Druck- und Medientechnik und Screen Based Media
-  private String courseOfStudies = "";
+  public String courseOfStudies = "";
 
   // Rückmeldegebühr
   public static final int TUITION_FEE = 312;
@@ -42,7 +42,7 @@ public class Student {
     this.name = student_string_list.get(0);
     if (Integer.parseInt(student_string_list.get(3)) !=this.TUITION_FEE )
     {
-      throw new Exception("Zu wenig bezahlt");
+      throw new NotPaidTuitionFeeException("Zu wenig bezahlt");
     }
     boolean foo = this.courses.contains(student_string_list.get(2));
     if (this.courses.contains(student_string_list.get(2)))
@@ -53,7 +53,7 @@ public class Student {
       }
     else
     {
-      throw new Exception("Falscher Studiengang");
+      throw new WrongCourseOfStudiesException("Falscher Studiengang");
     }
 
     System.out.println(temp);

@@ -58,7 +58,7 @@ public class Lab1Main {
     // Print all students which could be parsed
     System.out.println("List of Student objects:");
     for (Student student : students) {
-      System.out.println(student);
+      System.out.println(student.name + ' ' +student.courseOfStudies + ' ' + student.registrationNumber);
     }
   }
 }

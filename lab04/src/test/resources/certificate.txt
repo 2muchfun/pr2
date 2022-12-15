@@ -1,0 +1,1 @@
+Certificate[student=Student[name=Max Mustermann, registrstionNumber=0001]]

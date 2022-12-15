@@ -28,7 +28,15 @@ class MyTest_part2 {
     }
     @Test
     void test_QuickSort()  {
-        int[] myIntArray = {4, 2, 3};
+        int[] myIntArray = {4,2, 3};
+        QuickSort init = new QuickSort();
+        int[] expect = {2,3,4};
+        assertArrayEquals(expect,init.sort(myIntArray));
+
+    }
+    @Test
+    void test_QuickSort_algo()  {
+        int[] myIntArray = {4,2, 3};
         QuickSort init = new QuickSort();
         int[] expect = {2,3,4};
         assertArrayEquals(expect,init.sort(myIntArray));

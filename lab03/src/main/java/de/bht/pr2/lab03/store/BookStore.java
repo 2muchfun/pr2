@@ -1,6 +1,8 @@
 package de.bht.pr2.lab03.store;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.LinkedList;
 import java.util.List;
 
 public class BookStore {
@@ -64,5 +66,34 @@ public class BookStore {
     data.add("7 Minuten am Tag;Buch;20.00;2016");
 
     return data;
+  }
+  public static List<Books> convert_to_obj()
+  {
+    String bal = "Kingsbridge - Der Morgen einer neuen Zeit;Ebuch;19.99;2020;3";
+    List<String> bla = getSoldBooks();
+    List<Books> list_books = new LinkedList<Books>();
+    for (String element : bla) {
+      System.out.println(element);
+      List<String> student_string_list = Arrays.asList(element.split(";"));
+      if (student_string_list.size() > 4)
+      {
+        Books foo = new Books(student_string_list.get(0),
+                student_string_list.get(1),
+                Double.parseDouble(student_string_list.get(2)),
+                Integer.parseInt(student_string_list.get(3)),
+                student_string_list.get(4));
+        list_books.add(foo);
+      }
+      else
+      {
+        Books foo = new Books(student_string_list.get(0),
+                student_string_list.get(1),
+                Double.parseDouble(student_string_list.get(2)),
+                Integer.parseInt(student_string_list.get(3)),
+                null);
+        list_books.add(foo);
+      }
+    }
+    return list_books;
   }
 }
